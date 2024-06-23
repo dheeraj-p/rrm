@@ -1,7 +1,7 @@
 from django.urls import path
 
-from . import views
+from api import views
 
 urlpatterns = [
-    path("", views.index),
+    path("room_rates", views.RoomRateList.as_view()),
 ]

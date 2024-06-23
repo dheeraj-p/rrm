@@ -10,7 +10,6 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-v@*l6$+z2_&6nf&8h_cvrr^8w^-8_j$^m82s7r=)1l6wx39-3g'
 
-# SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
 ALLOWED_HOSTS = []
@@ -29,22 +28,13 @@ MIDDLEWARE = [
     'django.middleware.csrf.CsrfViewMiddleware',
 ]
 
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [],
+    'DEFAULT_AUTHENTICATION_CLASSES': [],
+    'UNAUTHENTICATED_USER': None,
+}
+
 ROOT_URLCONF = 'room_rate_management.urls'
-
-TEMPLATES = [
-    {
-        'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
-        'APP_DIRS': True,
-        'OPTIONS': {
-            'context_processors': [
-                'django.template.context_processors.debug',
-                'django.template.context_processors.request',
-            ],
-        },
-    },
-]
-
 WSGI_APPLICATION = 'room_rate_management.wsgi.application'
 
 
