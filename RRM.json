@@ -1,0 +1,350 @@
+{
+  "v": 2,
+  "name": "RRM",
+  "folders": [
+    {
+      "v": 2,
+      "name": "RoomRates",
+      "folders": [],
+      "requests": [
+        {
+          "v": "3",
+          "endpoint": "http://localhost:8000/api/room_rates",
+          "name": "Room Rate Create",
+          "params": [],
+          "headers": [],
+          "method": "POST",
+          "auth": {
+            "authType": "inherit",
+            "authActive": true
+          },
+          "preRequestScript": "",
+          "testScript": "",
+          "body": {
+            "contentType": "application/json",
+            "body": "{\n  \"room_id\": 2,\n  \"room_name\": \"Gold Room\",\n  \"default_rate\": 4000\n}"
+          },
+          "requestVariables": []
+        },
+        {
+          "v": "3",
+          "endpoint": "http://localhost:8000/api/room_rates",
+          "name": "Room Rate List",
+          "params": [],
+          "headers": [],
+          "method": "GET",
+          "auth": {
+            "authType": "inherit",
+            "authActive": false
+          },
+          "preRequestScript": "",
+          "testScript": "",
+          "body": {
+            "contentType": "application/json",
+            "body": ""
+          },
+          "requestVariables": []
+        },
+        {
+          "v": "3",
+          "endpoint": "http://localhost:8000/api/room_rates/2",
+          "name": "Fetch Room Rate by ID",
+          "params": [],
+          "headers": [],
+          "method": "GET",
+          "auth": {
+            "authType": "inherit",
+            "authActive": false
+          },
+          "preRequestScript": "",
+          "testScript": "",
+          "body": {
+            "contentType": null,
+            "body": "{\n  \"room_name\": \"Silver Room 2\"\n}"
+          },
+          "requestVariables": []
+        },
+        {
+          "v": "3",
+          "endpoint": "http://localhost:8000/api/room_rates/2",
+          "name": "Update by Room Rate by ID",
+          "params": [],
+          "headers": [],
+          "method": "PATCH",
+          "auth": {
+            "authType": "inherit",
+            "authActive": false
+          },
+          "preRequestScript": "",
+          "testScript": "",
+          "body": {
+            "contentType": "application/json",
+            "body": "{\n  \"room_id\": 3\n}"
+          },
+          "requestVariables": []
+        },
+        {
+          "v": "3",
+          "endpoint": "http://localhost:8000/api/room_rates/2",
+          "name": "Delete Room Rate",
+          "params": [],
+          "headers": [],
+          "method": "DELETE",
+          "auth": {
+            "authType": "inherit",
+            "authActive": false
+          },
+          "preRequestScript": "",
+          "testScript": "",
+          "body": {
+            "contentType": null,
+            "body": "{\n  \"room_name\": \"Silver Room 2\"\n}"
+          },
+          "requestVariables": []
+        }
+      ],
+      "auth": {
+        "authType": "inherit",
+        "authActive": true
+      },
+      "headers": []
+    },
+    {
+      "v": 2,
+      "name": "OverridenRoomRates",
+      "folders": [],
+      "requests": [
+        {
+          "v": "3",
+          "endpoint": "http://localhost:8000/api/overridden_rates/2",
+          "name": "Overridden Room Rate List",
+          "params": [],
+          "headers": [],
+          "method": "GET",
+          "auth": {
+            "authType": "inherit",
+            "authActive": false
+          },
+          "preRequestScript": "",
+          "testScript": "",
+          "body": {
+            "contentType": "application/json",
+            "body": ""
+          },
+          "requestVariables": []
+        },
+        {
+          "v": "3",
+          "endpoint": "http://localhost:8000/api/overridden_rates",
+          "name": "Create Overridden Room Rate ",
+          "params": [],
+          "headers": [],
+          "method": "POST",
+          "auth": {
+            "authType": "inherit",
+            "authActive": false
+          },
+          "preRequestScript": "",
+          "testScript": "",
+          "body": {
+            "contentType": "application/json",
+            "body": "{\n  \"room_rate\": 2,\n  \"overridden_rate\": 2500.00,\n  \"stay_date\": \"2024-06-27\"\n}"
+          },
+          "requestVariables": []
+        },
+        {
+          "v": "3",
+          "endpoint": "http://localhost:8000/api/overridden_rates/1",
+          "name": "Update Overridden Rate",
+          "params": [],
+          "headers": [],
+          "method": "DELETE",
+          "auth": {
+            "authType": "inherit",
+            "authActive": false
+          },
+          "preRequestScript": "",
+          "testScript": "",
+          "body": {
+            "contentType": null,
+            "body": ""
+          },
+          "requestVariables": []
+        },
+        {
+          "v": "3",
+          "endpoint": "http://localhost:8000/api/overridden_rates/1",
+          "name": "DELETE Update Overridden Rate",
+          "params": [],
+          "headers": [],
+          "method": "PATCH",
+          "auth": {
+            "authType": "inherit",
+            "authActive": false
+          },
+          "preRequestScript": "",
+          "testScript": "",
+          "body": {
+            "contentType": "application/json",
+            "body": "{\n  \"room_rate\": 1,\n  \"overridden_rate\": 2500.00,\n  \"stay_date\": \"2024-06-26\"\n}"
+          },
+          "requestVariables": []
+        }
+      ],
+      "auth": {
+        "authType": "inherit",
+        "authActive": true
+      },
+      "headers": []
+    },
+    {
+      "v": 2,
+      "name": "Discounts",
+      "folders": [],
+      "requests": [
+        {
+          "v": "3",
+          "endpoint": "http://localhost:8000/api/discounts",
+          "name": "List Discounts",
+          "params": [],
+          "headers": [],
+          "method": "GET",
+          "auth": {
+            "authType": "inherit",
+            "authActive": false
+          },
+          "preRequestScript": "",
+          "testScript": "",
+          "body": {
+            "contentType": null,
+            "body": ""
+          },
+          "requestVariables": []
+        },
+        {
+          "v": "3",
+          "endpoint": "http://localhost:8000/api/discounts",
+          "name": "Create Discount",
+          "params": [],
+          "headers": [],
+          "method": "POST",
+          "auth": {
+            "authType": "inherit",
+            "authActive": false
+          },
+          "preRequestScript": "",
+          "testScript": "",
+          "body": {
+            "contentType": "application/json",
+            "body": "{\n  \"discount_id\": 2,\n  \"discount_name\": \"Special One\",\n  \"discount_type\": \"fixed\",\n  \"discount_value\": 500\n}"
+          },
+          "requestVariables": []
+        },
+        {
+          "v": "3",
+          "endpoint": "http://localhost:8000/api/discounts/1",
+          "name": "Update Discount",
+          "params": [],
+          "headers": [],
+          "method": "PATCH",
+          "auth": {
+            "authType": "inherit",
+            "authActive": false
+          },
+          "preRequestScript": "",
+          "testScript": "",
+          "body": {
+            "contentType": "application/json",
+            "body": "{\n  \"discount_name\": \"Super 10\",\n  \"discount_type\": \"percentage\",\n  \"discount_value\": 10\n}"
+          },
+          "requestVariables": []
+        },
+        {
+          "v": "3",
+          "endpoint": "http://localhost:8000/api/discounts/1",
+          "name": "Delete Discount",
+          "params": [],
+          "headers": [],
+          "method": "DELETE",
+          "auth": {
+            "authType": "inherit",
+            "authActive": false
+          },
+          "preRequestScript": "",
+          "testScript": "",
+          "body": {
+            "contentType": null,
+            "body": ""
+          },
+          "requestVariables": []
+        }
+      ],
+      "auth": {
+        "authType": "inherit",
+        "authActive": true
+      },
+      "headers": []
+    }
+  ],
+  "requests": [
+    {
+      "v": "3",
+      "endpoint": "http://localhost:8000/api/add-discount",
+      "name": "Discount Mapper",
+      "params": [],
+      "headers": [],
+      "method": "POST",
+      "auth": {
+        "authType": "inherit",
+        "authActive": false
+      },
+      "preRequestScript": "",
+      "testScript": "",
+      "body": {
+        "contentType": "application/json",
+        "body": "{\n  \"room_rate\": 1,\n  \"discount\": 2\n}"
+      },
+      "requestVariables": []
+    },
+    {
+      "v": "3",
+      "endpoint": "http://localhost:8000/api/lowest-rate",
+      "name": "Lowest Rate",
+      "params": [
+        {
+          "key": "from",
+          "value": "2024-06-26",
+          "active": true
+        },
+        {
+          "key": "to",
+          "value": "2024-07-26",
+          "active": true
+        },
+        {
+          "key": "room_id",
+          "value": "1",
+          "active": true
+        }
+      ],
+      "headers": [],
+      "method": "GET",
+      "auth": {
+        "authType": "inherit",
+        "authActive": false
+      },
+      "preRequestScript": "",
+      "testScript": "",
+      "body": {
+        "contentType": "application/json",
+        "body": "{\n  \"room_rate\": 1,\n  \"discount\": 2\n}"
+      },
+      "requestVariables": []
+    }
+  ],
+  "headers": [],
+  "auth": {
+    "authType": "none",
+    "authActive": true
+  }
+}
