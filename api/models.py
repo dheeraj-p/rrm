@@ -1,9 +1,14 @@
 from django.db import models
 
+"""
+Added custom table names for the models, to avoid having app name in the table names
+"""
+
 class RoomRate(models.Model):
   room_id = models.IntegerField(primary_key=True)
   room_name = models.CharField(max_length=100, blank=False)
   default_rate = models.DecimalField(decimal_places=2, max_digits=8)
+  discounts = models.ManyToManyField("Discount", related_name="discount", through="DiscountRoomRate")
   
   class Meta:
     db_table = 'room_rate'
@@ -35,3 +40,10 @@ class Discount(models.Model):
   
   class Meta:
     db_table = 'discount'
+    
+class DiscountRoomRate(models.Model):
+  room_rate = models.ForeignKey(RoomRate, on_delete=models.CASCADE)
+  discount = models.ForeignKey(Discount, on_delete=models.CASCADE)
+  
+  class Meta:
+    db_table = 'discount_room_rate'

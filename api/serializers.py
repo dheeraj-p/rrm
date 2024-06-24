@@ -34,3 +34,8 @@ class DiscountSerializer(serializers.ModelSerializer):
   class Meta:
     model = models.Discount
     fields = ['discount_id', 'discount_name', 'discount_type', 'discount_value']
+    
+class DiscountRoomRateSerializer(serializers.ModelSerializer):
+  class Meta:
+    model = models.DiscountRoomRate
+    fields = ['room_rate', 'discount']
