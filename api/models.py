@@ -19,3 +19,19 @@ class OverriddenRoomRate(models.Model):
       models.UniqueConstraint(fields=['room_rate', 'stay_date'],name='unique_overridden_rate'),
     ]
     
+class Discount(models.Model):
+  class DiscountType(models.TextChoices):
+    FIXED = "fixed"
+    PERCENTAGE = "percentage"
+  
+  discount_id = models.IntegerField(primary_key=True)
+  discount_name = models.CharField(max_length=100, blank=False)
+  discount_type = models.CharField(
+    max_length=10,
+    choices=DiscountType,
+    default=DiscountType.FIXED,
+    )
+  discount_value = models.DecimalField(decimal_places=2, max_digits=8)
+  
+  class Meta:
+    db_table = 'discount'
